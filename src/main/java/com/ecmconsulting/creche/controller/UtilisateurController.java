@@ -19,13 +19,13 @@ public class UtilisateurController {
         return list;
     }
 
-    @PostMapping("/ajouterUtilisateur")
+    @PostMapping("")
     @ResponseBody
     public Utilisateur AjouterUtilisateur(@RequestBody Utilisateur u){
         return utilisateurService.AjouterUtilisateur(u);
     }
 
-    @DeleteMapping("deleteUtilisateur/{id}")
+    @DeleteMapping("/{id}")
     @ResponseBody
     public void deleteUtilisateur(@PathVariable("id")long idutilisateur){
         utilisateurService.DeleteUtilisateur(idutilisateur);
