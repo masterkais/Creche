@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Message")
@@ -23,7 +24,7 @@ public class Message implements Serializable {
     private String message_titre;
 
 
-    @ManyToOne
-    private Utilisateur Utilisateur;
+    @ManyToMany
+    private List<Utilisateur> Utilisateur;
 
 }

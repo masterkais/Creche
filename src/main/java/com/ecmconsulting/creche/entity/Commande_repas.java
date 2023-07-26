@@ -30,4 +30,8 @@ public class Commande_repas implements Serializable {
     @OneToOne
     private Facture_repas Facture_repas;
 
+
+    @ManyToOne
+    private Utilisateur Utilisateur ;
+
 }
