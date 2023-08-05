@@ -21,11 +21,8 @@ public class Suivi_enfant implements Serializable {
     private Date pointageArrive;
     private Date pointageDepart;
     private int repas;
-
-
     @ManyToOne
     private Enfant Enfant ;
-
     @ManyToOne
     private Historique Historique ;
 

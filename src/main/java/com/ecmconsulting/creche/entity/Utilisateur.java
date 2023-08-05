@@ -36,14 +36,13 @@ public class Utilisateur {
 
     @ManyToOne
     private Role Role;
-
-    @OneToMany(mappedBy = "Utilisateur", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    private List<Message>Message;
-
+    @ManyToMany
+    private List<Message> Message;
     @OneToMany(mappedBy = "Utilisateur", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Abonnement> Abonnement;
 
-
+    @OneToMany(mappedBy = "Utilisateur", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private List<Enfant> Enfant;
 
 
 

@@ -20,7 +20,6 @@ public class Historique implements Serializable {
     private Long idHist;
     private byte fichier;
     private String type;
-
     @OneToMany(mappedBy = "Historique", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Suivi_enfant> Suivi_enfant;
 
