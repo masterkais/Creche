@@ -16,8 +16,13 @@ public class Role implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="Id")
-    private Long id;
+    private Long idR;
     private String privileges;
+
+
+
+    //@ManyToOne
+    //private Utilisateur utilisateur;
 
 
 

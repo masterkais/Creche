@@ -26,7 +26,7 @@ public class Utilisateur {
     private String telephone;
     private String fax;
     private String couriel;
-    private byte image;
+   // private byte image;
     private int active;
     private String Login;
     private String Password;
@@ -34,8 +34,7 @@ public class Utilisateur {
 
 
 
-    @ManyToOne
-    private Role Role;
+
 
     @ManyToMany
     private List<Message> Message;
@@ -48,6 +47,9 @@ public class Utilisateur {
 
     @OneToMany(mappedBy = "Utilisateur", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Enfant> Enfant;
+
+    @ManyToOne
+    private Role role;
 
 
 

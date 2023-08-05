@@ -5,6 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface Commande_repasRepository extends JpaRepository<Commande_repas,Long> {
-
+public interface Commande_repasRepository extends JpaRepository<Commande_repas, Long> {
 }
