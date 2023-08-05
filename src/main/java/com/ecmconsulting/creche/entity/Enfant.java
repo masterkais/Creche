@@ -18,17 +18,13 @@ public class Enfant implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="Id")
-    private Long idenfant;
-
-
-
-
-
+    private Long idEnf;
     @OneToMany(mappedBy = "Enfant", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Suivi_enfant> Suivi_enfant;
 
     @OneToMany(mappedBy = "Enfant", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Document> Document;
-
+    @ManyToOne
+    private Utilisateur Utilisateur;
 
 }

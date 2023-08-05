@@ -21,7 +21,7 @@ public class Document implements Serializable {
     private String description;
     private Date date;
     private byte contenu;
-
+    private String Type;
     @ManyToOne
     private Enfant Enfant;
 }

@@ -1,9 +1,9 @@
 package com.ecmconsulting.creche.repository;
 
+import com.ecmconsulting.creche.entity.Enfant;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.ecmconsulting.creche.entity.Document;
-@Repository
-public interface DocumentRepository extends JpaRepository <Document,Long>{
 
+@Repository
+public interface EnfantRepository extends JpaRepository <Enfant,Long> {
 }

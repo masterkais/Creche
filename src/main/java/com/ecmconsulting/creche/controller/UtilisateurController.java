@@ -15,8 +15,8 @@ public class UtilisateurController {
 
     @GetMapping("/utilisateurs")
     public List<Utilisateur> getAllUtilisateurs(){
-        List<Utilisateur> list=utilisateurService.getAllUtilisateur();
-        return list;
+        List<Utilisateur> liste=utilisateurService.getAllUtilisateur();
+        return liste;
     }
 
     @PostMapping("/ajouterUtilisateur")
