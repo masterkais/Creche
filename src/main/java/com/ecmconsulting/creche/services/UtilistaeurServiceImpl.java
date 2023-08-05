@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UtilistaeurServiceImpl implements UtilisateurService {
@@ -34,6 +35,30 @@ public class UtilistaeurServiceImpl implements UtilisateurService {
     @Override
     public List<Utilisateur> getAllUtilisateur() {
         return RepUtilisateur.findAll();
+    }
+
+    @Override
+    public Utilisateur updateUtilisateur(Long idutilisateur, Utilisateur utilisateur) {
+        Optional<Utilisateur> utilisateurExistantOptional = RepUtilisateur.findById(idutilisateur);
+        if (utilisateurExistantOptional.isPresent()) {
+            Utilisateur utilisateurExistant = utilisateurExistantOptional.get();
+            utilisateurExistant.setNom(utilisateur.getNom());
+            utilisateurExistant.setPrenom(utilisateur.getPrenom());
+            utilisateurExistant.setAdresse(utilisateur.getAdresse());
+            utilisateurExistant.setVille(utilisateur.getVille());
+            utilisateurExistant.setTelephone(utilisateur.getTelephone());
+            utilisateurExistant.setFax(utilisateur.getFax());
+            utilisateurExistant.setCouriel(utilisateur.getCouriel());
+            utilisateurExistant.setImage(utilisateur.getImage());
+            utilisateurExistant.setActive(utilisateur.getActive());
+            utilisateurExistant.setLogin(utilisateur.getLogin());
+            utilisateurExistant.setPassword(utilisateur.getPassword());
+            utilisateurExistant.setType(utilisateur.getType());
+
+            return RepUtilisateur.save(utilisateurExistant);
+        } else {
+            return null;
+        }
     }
 
 

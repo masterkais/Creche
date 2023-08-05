@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.awt.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -19,8 +18,8 @@ public class Abonnement implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="Id")
     private long idAbo;
-    private Date date_debut;
-    private Date date_fin;
+    private Date dateDebut;
+    private Date dateFin;
     private  Long id_enfant;
 
     @Enumerated(EnumType.STRING)

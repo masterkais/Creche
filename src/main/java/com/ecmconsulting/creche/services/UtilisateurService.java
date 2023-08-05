@@ -11,5 +11,9 @@ public interface UtilisateurService {
 
     List<Utilisateur> getAllUtilisateur();
 
+    Utilisateur updateUtilisateur(Long idutilisateur, Utilisateur utilisateur);
+
+
+
 
 }

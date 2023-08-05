@@ -40,10 +40,10 @@ public class Utilisateur {
     @ManyToMany
     private List<Message> Message;
 
-    @OneToMany(mappedBy = "Utilisateur", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "Utilisateur", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Abonnement> Abonnement;
 
-    @OneToMany(mappedBy = "Utilisateur", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "Utilisateur", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private List<Commande_repas> Commande_repas;
 
     @OneToMany(mappedBy = "Utilisateur", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
