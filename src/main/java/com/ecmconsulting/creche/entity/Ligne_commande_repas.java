@@ -23,4 +23,7 @@ public class Ligne_commande_repas implements Serializable {
 
     @ManyToOne
     private Commande_repas Commande_repas;
+
+
+
 }

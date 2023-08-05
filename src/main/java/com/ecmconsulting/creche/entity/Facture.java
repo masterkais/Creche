@@ -24,5 +24,5 @@ public class Facture implements Serializable {
     private double total;
 
     @OneToOne
-    private Abonnement Abonnement;
+    private Abonnement abonnement;
 }

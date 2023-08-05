@@ -26,13 +26,11 @@ public class Utilisateur {
     private String telephone;
     private String fax;
     private String couriel;
-    private byte image;
+   // private byte image;
     private int active;
     private String Login;
     private String Password;
     private int type;
-
-
 
     @ManyToOne
     private Role Role;
@@ -44,7 +42,8 @@ public class Utilisateur {
     @OneToMany(mappedBy = "Utilisateur", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Enfant> Enfant;
 
-
+    @OneToMany(mappedBy = "Utilisateur", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<Commande_repas> Commande_repas;
 
 
 

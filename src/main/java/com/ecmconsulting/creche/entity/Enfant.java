@@ -24,7 +24,9 @@ public class Enfant implements Serializable {
 
     @OneToMany(mappedBy = "Enfant", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Document> Document;
+
     @ManyToOne
     private Utilisateur Utilisateur;
+
 
 }
