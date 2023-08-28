@@ -4,36 +4,39 @@ import com.ecmconsulting.creche.entity.Utilisateur;
 import com.ecmconsulting.creche.services.UtilisateurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/utilisateurs")
 public class UtilisateurController {
     @Autowired
-    UtilisateurService utilisateurService;
+    private UtilisateurService utilisateurService;
 
-    @GetMapping("/utilisateurs")
-    public List<Utilisateur> getAllUtilisateurs(){
-        List<Utilisateur> list=utilisateurService.getAllUtilisateur();
-        return list;
+    @GetMapping
+    public List<Utilisateur> getAllUtilisateurs() {
+        return utilisateurService.getAllUtilisateurs();
     }
 
-    @PostMapping("/ajouterUtilisateur")
-    @ResponseBody
-    public Utilisateur AjouterUtilisateur(@RequestBody Utilisateur u){
-        return utilisateurService.AjouterUtilisateur(u);
+    @GetMapping("/{idutilisateur}")
+    public Utilisateur getUtilisateurById(@PathVariable Long idutilisateur) {
+        return utilisateurService.getUtilisateurById(idutilisateur);
     }
 
-    @DeleteMapping("deleteUtilisateur/{id}")
-    @ResponseBody
-    public void deleteUtilisateur(@PathVariable("id")long idutilisateur){
-        utilisateurService.DeleteUtilisateur(idutilisateur);
+    @PostMapping
+    public Utilisateur createUtilisateur(@RequestBody Utilisateur utilisateur) {
+        return utilisateurService.createUtilisateur(utilisateur);
     }
 
+    @PutMapping("/{idutilisateur}")
+    public Utilisateur updateUtilisateur(@PathVariable Long idutilisateur, @RequestBody Utilisateur utilisateur) {
+        return utilisateurService.updateUtilisateur(idutilisateur, utilisateur);
+    }
 
-
-
-
-
+    @DeleteMapping("/{idutilisateur}")
+    public void deleteUtilisateur(@PathVariable Long idutilisateur) {
+        utilisateurService.deleteUtilisateur(idutilisateur);
+    }
 }

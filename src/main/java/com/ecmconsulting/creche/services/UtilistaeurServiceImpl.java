@@ -9,31 +9,37 @@ import java.util.List;
 
 @Service
 public class UtilistaeurServiceImpl implements UtilisateurService {
-
     @Autowired
-    UtilisateurRepository RepUtilisateur;
+    private UtilisateurRepository utilisateurRepository;
+
     @Override
-    public Utilisateur AjouterUtilisateur(Utilisateur u) {
-        RepUtilisateur.save(u);
-        return u;
+    public List<Utilisateur> getAllUtilisateurs() {
+        return utilisateurRepository.findAll();
     }
 
     @Override
-    public void DeleteUtilisateur(Utilisateur u) {
-        RepUtilisateur.delete(u);
-
+    public Utilisateur getUtilisateurById(Long idutilisateur) {
+        return utilisateurRepository.findById(idutilisateur).orElse(null);
     }
 
     @Override
-    public void DeleteUtilisateur(Long idutilisateur) {
-        RepUtilisateur.deleteById(idutilisateur);
-
+    public Utilisateur createUtilisateur(Utilisateur utilisateur) {
+        return utilisateurRepository.save(utilisateur);
     }
 
+    @Override
+    public Utilisateur updateUtilisateur(Long idutilisateur, Utilisateur utilisateur) {
+
+        if (!utilisateurRepository.existsById(idutilisateur)) {
+            return null;
+        }
+        utilisateur.setIdutilisateur(idutilisateur);
+        return utilisateurRepository.save(utilisateur);
+    }
 
     @Override
-    public List<Utilisateur> getAllUtilisateur() {
-        return RepUtilisateur.findAll();
+    public void deleteUtilisateur(Long idutilisateur) {
+        utilisateurRepository.deleteById(idutilisateur);
     }
 
 

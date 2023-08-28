@@ -5,11 +5,15 @@ import com.ecmconsulting.creche.entity.Utilisateur;
 import java.util.List;
 
 public interface UtilisateurService {
-    Utilisateur AjouterUtilisateur(Utilisateur u);
-    void DeleteUtilisateur(Utilisateur u);
-    void DeleteUtilisateur(Long idutilisateur);
+    List<Utilisateur> getAllUtilisateurs();
 
-    List<Utilisateur> getAllUtilisateur();
+    Utilisateur getUtilisateurById(Long idutilisateur);
+
+    Utilisateur createUtilisateur(Utilisateur utilisateur);
+
+    Utilisateur updateUtilisateur(Long idutilisateur, Utilisateur utilisateur);
+
+    void deleteUtilisateur(Long idutilisateur);
 
 
 }
