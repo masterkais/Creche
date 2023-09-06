@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -19,9 +20,10 @@ public class Enfant implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="Id")
     private Long idenfant;
-
-
-
+    private String nom;
+    private String prenom;
+    private Date dateNaissance;
+    private String adresse;
 
 
     @OneToMany(mappedBy = "Enfant", cascade = CascadeType.ALL,fetch = FetchType.EAGER)

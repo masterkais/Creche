@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/abonnements")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AbonnementController {
     private final AbonnementService abonnementService;
 

@@ -49,7 +49,6 @@ public class UtilistaeurServiceImpl implements UtilisateurService {
             utilisateurExistant.setTelephone(utilisateur.getTelephone());
             utilisateurExistant.setFax(utilisateur.getFax());
             utilisateurExistant.setCouriel(utilisateur.getCouriel());
-            utilisateurExistant.setImage(utilisateur.getImage());
             utilisateurExistant.setActive(utilisateur.getActive());
             utilisateurExistant.setLogin(utilisateur.getLogin());
             utilisateurExistant.setPassword(utilisateur.getPassword());
